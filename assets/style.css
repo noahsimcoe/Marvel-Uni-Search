@@ -1,0 +1,60 @@
+:root {
+   --main-bg-color: #373232;
+   --main-color: #ffffff;
+}
+
+* {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+h1 {
+    background-color: var(--main-bg-color);
+    color: var(--main-color);
+    padding: 1rem;
+    text-align: center;
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+#search-container {
+    border:solid 1px;
+    margin: 2.5rem;
+    padding: 1.2rem;
+}
+
+#searchbox {
+    margin: 1rem 1rem;
+    padding: .5rem;
+    font-size: 1.5rem;
+    border-radius: .5rem
+}
+
+#search-btn {
+    margin: .5rem 1rem .5rem;
+    padding: .5rem;
+    font-size: 1.3rem;
+    border-radius: .5rem
+}
+
+#profile {
+    border: solid 1pt;
+    margin: 3rem;
+}
+
+#wiki-actors {
+    border: solid 1pt;
+    margin: 3rem;
+}
+
+#favorites {
+    border: solid 1pt;
+    margin: 3rem;
+}
+
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+}

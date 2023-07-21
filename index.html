@@ -2,75 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Marvel Uni Search</title>
-    <!-- Insert correct CSS here -->
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/style.css" />
 </head>
 <body>
     <!-- Header Section -->
     <header class="header-section">
-        <h1 id="header"></h1>
+        <h1 id="header">Welcome to Marvel-Uni-Search</h1>
     </header>
 
     <!-- Search Section -->
-    <section id="search-section">
-        <div id="search-container">
-            <h2>Search Below</h2>
+    <div class="columns">
+        <section class="column is-one-quarter" id="search-section">
+            <div id="search-container">
+                <h3>Search for your favorite Marvel character</h3>
 
-            <form action="/">
-                <label for="search"></label>
-                <input type="text" placeholder="search..."/>
+                <form action="/">
+                    <label for="search"></label>
+                    <input type="text" id="searchbox" placeholder="e.g. Captain America"/>
 
-                <div id="btn-div">
-                    <button id="search-btn" type="button">Search</button>
-                </div>
-            </form>
-        </div>
-    </section>
+                    <div id="btn-div">
+                        <button id="search-btn" type="button">Show my hero!</button>
+                    </div>
+                </form>
+            </div>    
+        </section>
 
     <!-- Main Content Displayed -->
-    <main>
-        <section id="movies">
+        <main class="column is-two-fifths" id="profile">
+            <h3>(Profile)</h3>
+            <section id="movies">
+                <div>
+
+                </div>
+            </section>
+
+            <section id="shows">
+                <div>
+
+                </div>
+            </section>
+
+            <section id="comics">
+                <div>
+
+                </div>
+            </section>
+
+            <section id="games">
+                <div>
+
+                </div>
+            </section>
+        </main>
+
+        <!-- Wiki Section -->
+        <section class="column is-one-quarter" id="wiki-actors">
+            <h3>(Wiki-Actors)</h3>
             <div>
 
             </div>
         </section>
-
-        <section id="shows">
+    
+        <!-- Favorites Section -->
+        <section class="column is-one-fifth" id="favorites">
+            <h3>(Favorites)</h3>
             <div>
 
             </div>
         </section>
-
-        <section id="comics">
-            <div>
-
-            </div>
-        </section>
-
-        <section id="games">
-            <div>
-
-            </div>
-        </section>
-    </main>
-
-    <!-- Favorites Section -->
-    <section id="favorites">
-        <div>
-
-        </div>
-    </section>
-
-    <!-- Wiki Section -->
-    <section id="wiki-actors">
-        <div>
-
-        </div>
-    </section>
-
+    </div>
     <!-- Incert JS or JQuery below -->
-    <script src="./script.js"></script>
+    <script src="./assets/script.js"></script>
 </body>
 </html>
