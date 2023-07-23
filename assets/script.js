@@ -9,7 +9,7 @@ $(function () {
     var searchBoxId = document.querySelector("#searchBox")
     var btnDivId = document.querySelector("#btn-div");
     var searchBtnId = document.querySelector("#search-btn");
-    var columnIsTwoFifthClass = document.querySelector(".column-is-two-fifth");
+    var columnIsTwoFifthClass = document.querySelector(".column-is-two-fifths");
     var profileId = document.querySelector("#profile");
     var moviesId = document.querySelector("#movies");
     var showsId = document.querySelector("#shows");
