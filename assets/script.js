@@ -87,7 +87,7 @@ $(function () {
 
     // Required parameters for the Wiki request
     var wikiValue = "Hulk";
-    var wikiBaseUrl = "https://api.wikimedia.org/core/v1/wikipedia/en/page/Hulk";
+    var wikiBaseUrl = "https://en.wikipedia.org/api/rest_v1/page/summary/Hulk?redirect=true";
     var wikiKey = "9ccfad93fc03d34566f670620b7a314d";
     var lang = "en"
 
@@ -97,10 +97,10 @@ $(function () {
         })
         .then(function(data) {
             console.log(data);
-            wikiName = data.key;
+            wikiName = data.title;
             console.log(wikiName);
-            wikiSource = data.source;
+            wikiSource = data.extract;
             console.log(wikiSource);
-            $("#wiki-actors .wiki-name").text(wikiName);
-            $("#wiki-actors .wiki-source").text(wikiSource);
+            $(".wiki-name").text(wikiName);
+            $(".wiki-source").text(wikiSource);
         })
