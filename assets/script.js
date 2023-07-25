@@ -19,7 +19,7 @@ $(function () {
     var columnIsOneFifthClass = document.querySelector(".column-is-one-fifth");
     var favoritesId = document.querySelector("#favorites");
 
-    // required paramaters for the request
+    // required paramaters for the Marvel request
 
     var heroValue = "Hulk";
     var baseUrl = "https://gateway.marvel.com/v1/public/characters";
@@ -45,3 +45,23 @@ $(function () {
             $(".bio .description").text(charDescription);
         })
     });
+
+    // Required parameters for the Wiki request
+    var wikiValue = "Hulk";
+    var wikiBaseUrl = "https://api.wikimedia.org/core/v1/wikipedia/en/page/Hulk";
+    var wikiKey = "9ccfad93fc03d34566f670620b7a314d";
+    var lang = "en"
+
+    fetch(wikiBaseUrl)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            console.log(data);
+            wikiName = data.key;
+            console.log(wikiName);
+            wikiSource = data.source;
+            console.log(wikiSource);
+            $("#wiki-actors .wiki-name").text(wikiName);
+            $("#wiki-actors .wiki-source").text(wikiSource);
+        })
