@@ -19,31 +19,41 @@ $(function () {
     var columnIsOneFifthClass = document.querySelector(".column-is-one-fifth");
     var favoritesId = document.querySelector("#favorites");
 
-    // required paramaters for the Marvel request
+    // Runs handleFormSubmit on search btn click
+    searchBtnId.addEventListener('click', handleFormSubmit);
 
-    var heroValue = "Hulk";
-    var baseUrl = "https://gateway.marvel.com/v1/public/characters";
-    var timeStamp = dayjs().unix();
-    var publicKey = "c56260f4d749fa9644507d9cde6f2e8d";
-    var privateKey = "2008ba7cd3708bda8540f651e6375ab1b50070b2";
-    var hashPre = (timeStamp + privateKey + publicKey)
-    var hash = CryptoJS.MD5(hashPre);
+    function handleFormSubmit(event) {
+        event.preventDefault();
 
-    var apiUrl = `${baseUrl}?ts=${timeStamp}&apikey=${publicKey}&hash=${hash}&name=${heroValue}`;
+        heroSearch();
+    }
 
-    fetch(apiUrl)
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(data) {
-            console.log(data);
-            charName = data.data.results[0].name;
-            charDescription = data.data.results[0].description;
-            charThumbnailUrl = `${data.data.results[0].thumbnail.path}.${data.data.results[0].thumbnail.extension}`;
-            $(".bio .profile-pic").attr('src', charThumbnailUrl);
-            $(".bio .name").text(charName);
-            $(".bio .description").text(charDescription);
-        })
+    function heroSearch() {
+        // required paramaters for the request
+        var heroValue = "hulk";
+        var baseUrl = "https://gateway.marvel.com/v1/public/characters";
+        var timeStamp = dayjs().unix();
+        var publicKey = "c56260f4d749fa9644507d9cde6f2e8d";
+        var privateKey = "2008ba7cd3708bda8540f651e6375ab1b50070b2";
+        var hashPre = (timeStamp + privateKey + publicKey)
+        var hash = CryptoJS.MD5(hashPre);
+
+        var apiUrl = `${baseUrl}?ts=${timeStamp}&apikey=${publicKey}&hash=${hash}&name=${heroValue}`;
+
+        fetch(apiUrl)
+            .then(function(response) {
+                return response.json();
+            })
+                .then(function(data) {
+                console.log(data);
+                charName = data.data.results[0].name;
+                charDescription = data.data.results[0].description;
+                charThumbnailUrl = `${data.data.results[0].thumbnail.path}.${data.data.results[0].thumbnail.extension}`;
+                $(".bio .profile-pic").attr('src', charThumbnailUrl);
+                $(".bio .name").text(charName);
+                $(".bio .description").text(charDescription);
+            })
+        };
     });
 
     // Required parameters for the Wiki request
