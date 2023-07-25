@@ -25,12 +25,17 @@ $(function () {
     function handleFormSubmit(event) {
         event.preventDefault();
 
+        // RETURNING NULL
+        // searchBoxId = document.getElementById('searchBox').val();
+
+        console.log(searchBoxId);
+
         heroSearch();
     }
 
     function heroSearch() {
         // required paramaters for the request
-        var heroValue = "hulk";
+        var heroValue = searchBoxId;
         var baseUrl = "https://gateway.marvel.com/v1/public/characters";
         var timeStamp = dayjs().unix();
         var publicKey = "c56260f4d749fa9644507d9cde6f2e8d";
@@ -104,3 +109,19 @@ $(function () {
             $("#wiki-actors .wiki-name").text(wikiName);
             $("#wiki-actors .wiki-source").text(wikiSource);
         })
+        .catch(function(error) {
+            console.log(error);
+        })
+
+    // function settingLocalStorage() {
+    //     localStorage.setItem('searchBoxId', JSON.stringify(searchBoxId));
+
+    //     gettingLocalStorage();
+    // }
+
+    // function gettingLocalStorage() {
+    //     var favoritesSearch = JSON.parse(localStorage.getItem(searchBoxId));
+
+
+    // }
+    
