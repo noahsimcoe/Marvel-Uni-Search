@@ -6,7 +6,7 @@ $(function () {
     var columnIsOneQuarterClass = document.querySelectorAll(".column-is-one-quarter")
     var searchSectionId = document.querySelector("#search-section");
     var searchContainerId = document.querySelector("#search-container");
-    var searchBoxId = document.querySelector("#searchBox")
+    var searchBoxId = document.querySelector("#searchbox")
     var btnDivId = document.querySelector("#btn-div");
     var searchBtnId = document.querySelector("#search-btn");
     var columnIsTwoFifthClass = document.querySelector(".column-is-two-fifths");
@@ -25,12 +25,15 @@ $(function () {
     function handleFormSubmit(event) {
         event.preventDefault();
 
-        heroSearch();
+        searchBoxId = $('#searchbox').val().trim();
+
+        heroSearch(searchBoxId);
+        wikiSearch(searchBoxId);
     }
 
-    function heroSearch() {
+    function heroSearch(searchBoxId) {
         // required paramaters for the request
-        var heroValue = "hulk";
+        var heroValue = searchBoxId;
         var baseUrl = "https://gateway.marvel.com/v1/public/characters";
         var timeStamp = dayjs().unix();
         var publicKey = "c56260f4d749fa9644507d9cde6f2e8d";
@@ -85,7 +88,9 @@ $(function () {
         };
     });
 
+    function wikiSearch(searchBoxId) {
     // Required parameters for the Wiki request
+
     var wikiValue = "Hulk";
     var wikiBaseUrl = "https://en.wikipedia.org/api/rest_v1/page/summary/Hulk?redirect=true";
     var wikiKey = "9ccfad93fc03d34566f670620b7a314d";
@@ -104,3 +109,4 @@ $(function () {
             $(".wiki-name").text(wikiName);
             $(".wiki-source").text(wikiSource);
         })
+
