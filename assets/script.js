@@ -49,10 +49,13 @@ $(function () {
             })
                 .then(function(data) {
                 console.log(data);
+
+                // pulled the basic profile information per character and storing it into variables
                 charName = data.data.results[0].name;
                 charDescription = data.data.results[0].description;
                 charThumbnailUrl = `${data.data.results[0].thumbnail.path}.${data.data.results[0].thumbnail.extension}`;
 
+                // creating strings that can display the names of each form of featured media
                 comicsList = [];
                 comicsArray = data.data.results[0].comics.items;
                 for (var i = 0; i < comicsArray.length; i++) {
@@ -81,9 +84,14 @@ $(function () {
                 }
                 seriesList = seriesList.join(", ");
 
+                // updated html with values pulled from marvel api
                 $(".bio .profile-pic").attr('src', charThumbnailUrl);
                 $(".bio .name").text(charName);
                 $(".bio .description").text(charDescription);
+                $(".comics #comics").text(comicsList);
+                $(".events #events").text(eventsList);
+                $(".stories #stories").text(storiesList);
+                $(".series #series").text(seriesList);
             })
         };
     });
