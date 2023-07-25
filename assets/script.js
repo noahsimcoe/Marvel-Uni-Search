@@ -99,8 +99,8 @@ $(function () {
     function wikiSearch(searchBoxId) {
     // Required parameters for the Wiki request
 
-    var wikiValue = "Hulk";
-    var wikiBaseUrl = "https://en.wikipedia.org/api/rest_v1/page/summary/Hulk?redirect=true";
+    var wikiValue = searchBoxId;
+    var wikiBaseUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${searchBoxId}?redirect=true`;
     var wikiKey = "9ccfad93fc03d34566f670620b7a314d";
     var lang = "en"
 
@@ -117,4 +117,4 @@ $(function () {
             $(".wiki-name").text(wikiName);
             $(".wiki-source").text(wikiSource);
         })
-
+    }
