@@ -5,6 +5,9 @@
 
 * {
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    /* color: var(--main-color); */
+    /* -webkit-text-stroke-width: .02rem;
+    -webkit-text-stroke-color: #ec1d24;  */
 }
 
 h1 {
@@ -13,10 +16,14 @@ h1 {
     padding: 1rem;
     text-align: center;
     font-size: 3rem;
+    -webkit-text-stroke-width: .07rem;
+    -webkit-text-stroke-color: #ec1d24;
 }
 
 h3 {
     font-size: 1.5rem;
+    -webkit-text-stroke-width: .015rem;
+    -webkit-text-stroke-color: #ec1d24;
 }
 
 /* May or may not want to use fit-content! */
@@ -33,14 +40,16 @@ h3 {
     margin: 1rem 1rem;
     padding: .5rem;
     font-size: 1.5rem;
-    border-radius: .5rem
+    border-radius: .5rem;
 }
 
 #search-btn {
     margin: .5rem 1rem .5rem;
     padding: .5rem;
     font-size: 1.3rem;
-    border-radius: .5rem
+    border-radius: .5rem;
+    -webkit-text-stroke-width: .03rem;
+    -webkit-text-stroke-color: #ec1d24;
 }
 
 #profile {
@@ -55,7 +64,7 @@ h3 {
 
 #favorites {
     border: solid 1pt;
-    margin: 3rem;
+    margin: 2.5rem;
 }
 
 .columns {
@@ -63,6 +72,24 @@ h3 {
     flex-wrap: wrap;
 }
 
+.footer {
+    background-color: var(--main-bg-color);
+}
+
+#footer {
+    color: var(--main-color);
+    -webkit-text-stroke-width: .03rem;
+    -webkit-text-stroke-color: #ec1d24;
+}
+
 .media-area {
     margin-top: 1rem;
+}
+
+body {
+    background-image: url("/assets/images/IronMan.jpg");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size: 750px;
+    background-image:rgba(0, 0, 0, .1)
 }
