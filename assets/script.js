@@ -21,9 +21,7 @@ $(function () {
     var favoritesTabDiv = document.querySelector('#favorites-tab-div');
     var favoritesBtnDiv = document.querySelector('#favorites-btn-div');
     var favoritesBtn = document.querySelector('#favorites-btn');
-    var charName;
-    var charDescription;
-    var charThumbnailUrl;
+    var profileName = document.querySelector('#profile-h3');
 
     // Runs handleFormSubmit on search btn click
     searchBtnId.addEventListener('click', handleFormSubmit);
@@ -84,6 +82,10 @@ $(function () {
                 charDescription = data.data.results[0].description;
                 charThumbnailUrl = `${data.data.results[0].thumbnail.path}.${data.data.results[0].thumbnail.extension}`;
                 settingLocalStorage(searchBoxId);
+
+                // Adds hero search in for profile placeholder
+                heroValue = heroValue.toUpperCase();
+                profileName.textContent = heroValue;
 
                 // creating strings that can display the names of each form of featured media
                 comicsList = [];
