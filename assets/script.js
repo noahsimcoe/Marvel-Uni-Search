@@ -40,13 +40,10 @@ $(function () {
     function gettingLocalStorage() {
         var favName = JSON.parse(localStorage.getItem('charName'));
         var favDesc = JSON.parse(localStorage.getItem('charDescription'));
-        var favPic = JSON.parse(localStorage.getItem('charThumbnail'));
-
-        $("#favorites .profile-pic").attr('src', favName);
-        $("#favorites .name").text(favDesc);
-        $("#favorites .description").text(favPic);
-
-        console.log('inside gettingLocalStorage');
+        var favPic = JSON.parse(localStorage.getItem('charThumbnailUrl'));
+        $("#favorites .profile-pic").attr('src', favPic);
+        $("#favorites .name").text(favName);
+        $("#favorites .description").text(favDesc);
     }
 
     function handleFormSubmit(event) {
@@ -118,7 +115,6 @@ $(function () {
 
                 // updated html with values pulled from marvel api
                 $(".bio .profile-pic").attr('src', charThumbnailUrl);
-                $(".bio .name").text(charName);
                 $(".bio .description").text(charDescription);
                 $(".comics #comics").text(comicsList);
                 $(".events #events").text(eventsList);
