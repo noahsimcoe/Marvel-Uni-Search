@@ -145,7 +145,7 @@ $(function () {
             $(".wiki-name").text(wikiName);
             $(".wiki-thumbnail").attr('src', wikiThumb);
             $(".wiki-source").text(wikiSource);
-            $(".wiki-link").text(wikiUrl);
+            $(".wiki-link").attr('href', wikiUrl);
         })
     }
 
