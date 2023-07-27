@@ -26,8 +26,10 @@ $(function () {
     // Runs handleFormSubmit on search btn click
     searchBtnId.addEventListener('click', handleFormSubmit);
 
-    function settingLocalStorage(searchBoxId) {
-        localStorage.setItem('searchBoxId', JSON.stringify(searchBoxId));
+    function settingLocalStorage() {
+        localStorage.setItem('charName', JSON.stringify(charName));
+        localStorage.setItem('charDescription', JSON.stringify(charDescription));
+        localStorage.setItem('charThumbnailUrl', JSON.stringify(charThumbnailUrl));
 
         favoritesBtn.addEventListener('click', callingStorage);
             function callingStorage() {
@@ -36,9 +38,12 @@ $(function () {
     }
 
     function gettingLocalStorage() {
-        var favoritesDisplay = JSON.parse(localStorage.getItem('searchBoxId'));
-
-        console.log('inside gettingLocalStorage');
+        var favName = JSON.parse(localStorage.getItem('charName'));
+        var favDesc = JSON.parse(localStorage.getItem('charDescription'));
+        var favPic = JSON.parse(localStorage.getItem('charThumbnailUrl'));
+        $("#favorites .profile-pic").attr('src', favPic);
+        $("#favorites .name").text(favName);
+        $("#favorites .description").text(favDesc);
     }
 
     function handleFormSubmit(event) {
@@ -48,7 +53,6 @@ $(function () {
 
         heroSearch(searchBoxId);
         wikiSearch(searchBoxId);
-        settingLocalStorage(searchBoxId);
     }
 
     function heroSearch(searchBoxId) {
@@ -74,6 +78,7 @@ $(function () {
                 charName = data.data.results[0].name;
                 charDescription = data.data.results[0].description;
                 charThumbnailUrl = `${data.data.results[0].thumbnail.path}.${data.data.results[0].thumbnail.extension}`;
+                settingLocalStorage(searchBoxId);
 
                 // Adds hero search in for profile placeholder
                 heroValue = heroValue.toUpperCase();
@@ -110,7 +115,6 @@ $(function () {
 
                 // updated html with values pulled from marvel api
                 $(".bio .profile-pic").attr('src', charThumbnailUrl);
-                $(".bio .name").text(charName);
                 $(".bio .description").text(charDescription);
                 $(".comics #comics").text(comicsList);
                 $(".events #events").text(eventsList);
@@ -142,3 +146,4 @@ $(function () {
             $(".wiki-source").text(wikiSource);
         })
     }
+
