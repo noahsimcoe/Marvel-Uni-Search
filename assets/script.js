@@ -19,6 +19,9 @@ $(function () {
     var favoritesBtn = document.querySelector('#favorites-btn');
     var profileName = document.querySelector('#profile-h3');
 
+// shows favorite character upon page loading
+gettingLocalStorage();
+
     // Runs handleFormSubmit on search btn click
     searchBtnId.addEventListener('click', handleFormSubmit);
 
@@ -40,8 +43,10 @@ $(function () {
         var favDesc = JSON.parse(localStorage.getItem('charDescription'));
         var favPic = JSON.parse(localStorage.getItem('charThumbnailUrl'));
         $("#favorites .profile-pic").attr('src', favPic);
-        $("#favorites .name").text(favName);
+        // commenting out the original name, as we're now displaying it in the favorite's header
+        //$("#favorites .name").text(favName);
         $("#favorites .description").text(favDesc);
+        $("#favorites .title").text(`Favorite Character: ${favName.toUpperCase()}`);
     }
 
     // called when submit button is clicked, runs both server-side api calls
