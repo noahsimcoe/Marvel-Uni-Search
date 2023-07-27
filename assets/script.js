@@ -121,15 +121,13 @@ $(function () {
         };
     });
 
+    // Function for wiki summary area
     function wikiSearch(searchBoxId) {
-    // Required parameters for the Wiki request
+    // Required parameter for the Wiki request
+    var wikiApi = `https://en.wikipedia.org/api/rest_v1/page/summary/${searchBoxId}?redirect=true`;
 
-    var wikiValue = searchBoxId;
-    var wikiBaseUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${searchBoxId}?redirect=true`;
-    var wikiKey = "9ccfad93fc03d34566f670620b7a314d";
-    var lang = "en"
-
-    fetch(wikiBaseUrl)
+    // Fetch wiki summary data and display content
+    fetch(wikiApi)
         .then(function(response) {
             return response.json();
         })

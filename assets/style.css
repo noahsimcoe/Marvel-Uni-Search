@@ -1,18 +1,18 @@
+/* Set main app colors in root */
 :root {
    --main-bg-color: #373232;
    --main-color: #ffffff;
 }
 
+/* Set global style for font-family */
 * {
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    /* color: var(--main-color); */
-    /* -webkit-text-stroke-width: .02rem;
-    -webkit-text-stroke-color: #ec1d24;  */
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
+/* Begin using webkit stroke width and color to add touch of Marvel "red" to the app */
 h1 {
     background-color: var(--main-bg-color);
     color: var(--main-color);
@@ -69,7 +69,7 @@ h3 {
     margin: 3rem;
 }
 
-#wiki-actors {
+#wiki-sum {
     border: solid 1pt;
     margin: 3rem;
 }
@@ -98,6 +98,7 @@ h3 {
     margin-top: 1rem;
 }
 
+/* Add background image to the body */
 body {
     background-image: url("/assets/images/IronMan.jpg");
     background-repeat:no-repeat;
