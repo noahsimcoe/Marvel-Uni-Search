@@ -21,12 +21,17 @@ $(function () {
     var favoritesTabDiv = document.querySelector('#favorites-tab-div');
     var favoritesBtnDiv = document.querySelector('#favorites-btn-div');
     var favoritesBtn = document.querySelector('#favorites-btn');
+    var charName;
+    var charDescription;
+    var charThumbnailUrl;
 
     // Runs handleFormSubmit on search btn click
     searchBtnId.addEventListener('click', handleFormSubmit);
 
-    function settingLocalStorage(searchBoxId) {
-        localStorage.setItem('searchBoxId', JSON.stringify(searchBoxId));
+    function settingLocalStorage() {
+        localStorage.setItem('charName', JSON.stringify(charName));
+        localStorage.setItem('charDescription', JSON.stringify(charDescription));
+        localStorage.setItem('charThumbnailUrl', JSON.stringify(charThumbnailUrl));
 
         favoritesBtn.addEventListener('click', callingStorage);
             function callingStorage() {
@@ -35,7 +40,13 @@ $(function () {
     }
 
     function gettingLocalStorage() {
-        var favoritesDisplay = JSON.parse(localStorage.getItem('searchBoxId'));
+        var favName = JSON.parse(localStorage.getItem('charName'));
+        var favDesc = JSON.parse(localStorage.getItem('charDescription'));
+        var favPic = JSON.parse(localStorage.getItem('charThumbnail'));
+
+        $("#favorites .profile-pic").attr('src', favName);
+        $("#favorites .name").text(favDesc);
+        $("#favorites .description").text(favPic);
 
         console.log('inside gettingLocalStorage');
     }
@@ -47,7 +58,6 @@ $(function () {
 
         heroSearch(searchBoxId);
         wikiSearch(searchBoxId);
-        settingLocalStorage(searchBoxId);
     }
 
     function heroSearch(searchBoxId) {
@@ -73,6 +83,7 @@ $(function () {
                 charName = data.data.results[0].name;
                 charDescription = data.data.results[0].description;
                 charThumbnailUrl = `${data.data.results[0].thumbnail.path}.${data.data.results[0].thumbnail.extension}`;
+                settingLocalStorage(searchBoxId);
 
                 // creating strings that can display the names of each form of featured media
                 comicsList = [];
