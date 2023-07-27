@@ -11,10 +11,6 @@ $(function () {
     var searchBtnId = document.querySelector("#search-btn");
     var columnIsTwoFifthClass = document.querySelector(".column-is-two-fifths");
     var profileId = document.querySelector("#profile");
-    var moviesId = document.querySelector("#movies");
-    var showsId = document.querySelector("#shows");
-    var comicsId = document.querySelector("#comics");
-    var gamesId = document.querySelector("#games");
     var wikiActorsId = document.querySelector("#wiki-actors");
     var columnIsOneFifthClass = document.querySelector(".column-is-one-fifth");
     var favoritesId = document.querySelector("#favorites");
@@ -26,6 +22,7 @@ $(function () {
     // Runs handleFormSubmit on search btn click
     searchBtnId.addEventListener('click', handleFormSubmit);
 
+    // sends key:value data about a favorited character into localStorage
     function settingLocalStorage() {
         localStorage.setItem('charName', JSON.stringify(charName));
         localStorage.setItem('charDescription', JSON.stringify(charDescription));
@@ -37,6 +34,7 @@ $(function () {
             }
     }
 
+    // renders the favorited character's information under the favorites section
     function gettingLocalStorage() {
         var favName = JSON.parse(localStorage.getItem('charName'));
         var favDesc = JSON.parse(localStorage.getItem('charDescription'));
@@ -46,23 +44,22 @@ $(function () {
         $("#favorites .description").text(favDesc);
     }
 
+    // called when submit button is clicked, runs both server-side api calls
     function handleFormSubmit(event) {
         event.preventDefault();
-
         searchBoxId = $('#searchbox').val().trim();
-
         heroSearch(searchBoxId);
         wikiSearch(searchBoxId);
     }
 
     function heroSearch(searchBoxId) {
-        // required paramaters for the request
         var heroValue = searchBoxId;
         var baseUrl = "https://gateway.marvel.com/v1/public/characters";
         var timeStamp = dayjs().unix();
         var publicKey = "c56260f4d749fa9644507d9cde6f2e8d";
         var privateKey = "2008ba7cd3708bda8540f651e6375ab1b50070b2";
         var hashPre = (timeStamp + privateKey + publicKey)
+        // creates an MD5 hash to be used as a parameter in the first api request
         var hash = CryptoJS.MD5(hashPre);
 
         var apiUrl = `${baseUrl}?ts=${timeStamp}&apikey=${publicKey}&hash=${hash}&name=${heroValue}`;
