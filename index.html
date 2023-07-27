@@ -25,15 +25,21 @@
                     <label for="search"></label>
                     <input type="text" id="searchbox" placeholder="e.g. Captain America"/>
 
-                    <div id="btn-div">
-                        <button id="search-btn" type="button">Show my hero!</button>
+                    <!-- Search Button -->
+                    <div id="btn-div" class="search-btn-div">
+                        <button class="btn" id="search-btn" type="button">Show my hero!</button>
+                    </div>
+
+                    <!-- Favorites Button -->
+                    <div id="favorites-btn-div" class="favorites-btn-div">
+                        <button class="btn" id="favorites-btn" type="button">Set as favorite!</button>
                     </div>
                 </form>
             </div>
             <div class="column is-four-fifths-mobile" id="favorites">
                 <h3>(Favorites)</h3>
-                <div>
-    
+                <div id="favorites-tab-div">
+                    <img class="profile-pic" src="/" alt="profile picture" width="200">
                 </div>
             </div>
         </section>
