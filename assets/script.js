@@ -118,3 +118,4 @@ $(function () {
             $(".wiki-source").text(wikiSource);
         })
     }
+
