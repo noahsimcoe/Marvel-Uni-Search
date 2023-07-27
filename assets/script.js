@@ -74,7 +74,6 @@ gettingLocalStorage();
                 return response.json();
             })
                 .then(function(data) {
-                console.log(data);
 
                 // pulled the basic profile information per character and storing it into variables
                 charName = data.data.results[0].name;
@@ -137,18 +136,21 @@ gettingLocalStorage();
             return response.json();
         })
         .then(function(data) {
-            console.log(data);
             wikiName = data.title;
-            console.log(wikiName);
             wikiSource = data.extract;
             wikiThumb = data.thumbnail.source;
-            console.log(wikiSource);
             wikiUrl = data.content_urls.desktop.page;
-            console.log(wikiUrl);
             $(".wiki-name").text(wikiName);
             $(".wiki-thumbnail").attr('src', wikiThumb);
             $(".wiki-source").text(wikiSource);
             $(".wiki-link").attr('href', wikiUrl);
         })
     }
+
+    // $(document).on("click", ".title", function() {
+    //     // favName = $(this).text();
+    //     $(".title").on("click", wikiSearch)
+    //     // heroSearch(searchBoxId);
+    //     wikiSearch();
+    // })
 
