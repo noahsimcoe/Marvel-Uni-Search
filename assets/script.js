@@ -18,9 +18,27 @@ $(function () {
     var wikiActorsId = document.querySelector("#wiki-actors");
     var columnIsOneFifthClass = document.querySelector(".column-is-one-fifth");
     var favoritesId = document.querySelector("#favorites");
+    var favoritesTabDiv = document.querySelector('#favorites-tab-div');
+    var favoritesBtnDiv = document.querySelector('#favorites-btn-div');
+    var favoritesBtn = document.querySelector('#favorites-btn');
 
     // Runs handleFormSubmit on search btn click
     searchBtnId.addEventListener('click', handleFormSubmit);
+
+    function settingLocalStorage(searchBoxId) {
+        localStorage.setItem('searchBoxId', JSON.stringify(searchBoxId));
+
+        favoritesBtn.addEventListener('click', callingStorage);
+            function callingStorage() {
+                gettingLocalStorage();
+            }
+    }
+
+    function gettingLocalStorage() {
+        var favoritesDisplay = JSON.parse(localStorage.getItem('searchBoxId'));
+
+        console.log('inside gettingLocalStorage');
+    }
 
     function handleFormSubmit(event) {
         event.preventDefault();
@@ -29,6 +47,7 @@ $(function () {
 
         heroSearch(searchBoxId);
         wikiSearch(searchBoxId);
+        settingLocalStorage(searchBoxId);
     }
 
     function heroSearch(searchBoxId) {
