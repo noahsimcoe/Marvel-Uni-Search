@@ -41,3 +41,8 @@ No current Licenses
 ## Screenshot
 
 ![Screenshot](./assets/images/MUSScreenshot.jpg)
+
+## Deployed Link
+
+[Here is a link to the deployed application](https://noahsimcoe.github.io/Marvel-Uni-Search/)
+
