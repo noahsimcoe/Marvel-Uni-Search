@@ -112,3 +112,7 @@ body {
     background-size: 750px;
     background-image:rgba(0, 0, 0, .1)
 }
+
+.hide {
+    visibility: hidden;
+}
