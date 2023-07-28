@@ -74,6 +74,12 @@ h3 {
     margin: 3rem;
 }
 
+.wiki-link {
+    font-size: 1.5rem;
+    -webkit-text-stroke-width: .015rem;
+    -webkit-text-stroke-color: #ec1d24;
+}
+
 #favorites {
     border: solid 1pt;
     margin: 2.5rem;

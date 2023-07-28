@@ -47,7 +47,9 @@ $(function () {
     // commenting out the original name, as we're now displaying it in the favorite's header
     //$("#favorites .name").text(favName);
     $("#favorites .description").text(favDesc);
-    $("#favorites .title").html(`<p>Favorite Character: <span id="favCharName">${favName.toUpperCase()}</span></p>`);
+    $("#favorites .title").html(
+      `<p>Favorite Character: <span id="favCharName">${favName.toUpperCase()}</span></p>`
+    );
   }
 
   // called when submit button is clicked, runs both server-side api calls
@@ -75,8 +77,6 @@ $(function () {
         return response.json();
       })
       .then(function (data) {
-        console.log(data);
-
         // pulled the basic profile information per character and storing it into variables
         charName = data.data.results[0].name;
         charDescription = data.data.results[0].description;
@@ -124,7 +124,7 @@ $(function () {
         $(".stories #stories").text(storiesList);
         $(".series #series").text(seriesList);
       });
-  };
+  }
   // Function for wiki summary area
   function wikiSearch(searchBoxId) {
     // Required parameter for the Wiki request
