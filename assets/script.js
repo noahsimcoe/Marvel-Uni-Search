@@ -1,22 +1,6 @@
 $(function () {
-  // variables
-  var headerId = document.querySelector("#header");
-  var columnsClass = document.querySelector(".columns");
-  var columnIsOneQuarterClass = document.querySelectorAll(
-    ".column-is-one-quarter"
-  );
-  var searchSectionId = document.querySelector("#search-section");
-  var searchContainerId = document.querySelector("#search-container");
   var searchBoxId = document.querySelector("#searchbox");
-  var btnDivId = document.querySelector("#btn-div");
   var searchBtnId = document.querySelector("#search-btn");
-  var columnIsTwoFifthClass = document.querySelector(".column-is-two-fifths");
-  var profileId = document.querySelector("#profile");
-  var wikiActorsId = document.querySelector("#wiki-actors");
-  var columnIsOneFifthClass = document.querySelector(".column-is-one-fifth");
-  var favoritesId = document.querySelector("#favorites");
-  var favoritesTabDiv = document.querySelector("#favorites-tab-div");
-  var favoritesBtnDiv = document.querySelector("#favorites-btn-div");
   var favoritesBtn = document.querySelector("#favorites-btn");
   var profileName = document.querySelector("#profile-h3");
 
