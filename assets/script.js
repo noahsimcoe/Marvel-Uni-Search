@@ -32,7 +32,7 @@ $(function () {
     //$("#favorites .name").text(favName);
     $("#favorites .description").text(favDesc);
     $("#favorites .title").html(
-      `<p>Favorite Character: <span id="favCharName">${favName.toUpperCase()}</span></p>`
+      `<p>Favorite Character: <span id="favCharName">${favName}</span></p>`
     );
   }
 

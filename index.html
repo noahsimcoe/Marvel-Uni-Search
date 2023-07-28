@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Marvel Uni Search</title>
     <!-- Link to Bulma css library and stylesheet -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
     <link rel="stylesheet" href="./assets/style.css" />
     <!-- Link to Day.js library -->
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"></script>
 </head>
-<body>
+<body id="body">
     <!-- Header Section -->
     <header class="header-section">
         <h1 id="header">Welcome to Marvel-Uni-Search</h1>
@@ -24,7 +24,7 @@
 
                 <form action="/">
                     <label for="search"></label>
-                    <input type="text" id="searchbox" placeholder="e.g. Captain America"/>
+                    <input type="text" class="searchbox" id="searchbox" placeholder="e.g. Captain America"/>
 
                     <!-- Search Button -->
                     <div class="buttons">
