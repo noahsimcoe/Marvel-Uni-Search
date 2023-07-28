@@ -39,6 +39,10 @@ $(function () {
   // called when submit button is clicked, runs both server-side api calls
   function handleFormSubmit(event) {
     event.preventDefault();
+
+    $('#wiki-sum').removeClass('hide');
+    $('#profile').removeClass('hide');
+
     searchBoxId = $("#searchbox").val().trim();
     heroSearch(searchBoxId);
     wikiSearch(searchBoxId);
