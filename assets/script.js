@@ -2,9 +2,7 @@ $(function () {
   // variables
   var headerId = document.querySelector("#header");
   var columnsClass = document.querySelector(".columns");
-  var columnIsOneQuarterClass = document.querySelectorAll(
-    ".column-is-one-quarter"
-  );
+  var columnIsOneQuarterClass = document.querySelectorAll(".column-is-one-quarter");
   var searchSectionId = document.querySelector("#search-section");
   var searchContainerId = document.querySelector("#search-container");
   var searchBoxId = document.querySelector("#searchbox");
@@ -48,7 +46,7 @@ $(function () {
     //$("#favorites .name").text(favName);
     $("#favorites .description").text(favDesc);
     $("#favorites .title").html(
-      `<p>Favorite Character: <span id="favCharName">${favName.toUpperCase()}</span></p>`
+      `<p>Favorite Character: <span id="favCharName">${favName}</span></p>`
     );
   }
 

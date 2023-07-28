@@ -39,7 +39,7 @@ h3 {
     /* width:fit-content; */
 }
 
-#searchbox {
+.searchbox {
     display: flex;
     margin: 1rem 1rem;
     padding: .5rem;
