@@ -120,14 +120,10 @@ $(function () {
         return response.json();
       })
       .then(function (data) {
-        console.log(data);
         wikiName = data.title;
-        console.log(wikiName);
         wikiSource = data.extract;
         wikiThumb = data.thumbnail.source;
-        console.log(wikiSource);
         wikiUrl = data.content_urls.desktop.page;
-        console.log(wikiUrl);
         $(".wiki-name").text(wikiName);
         $(".wiki-thumbnail").attr("src", wikiThumb);
         $(".wiki-source").text(wikiSource);
@@ -135,10 +131,10 @@ $(function () {
       });
   }
 
-  $(document).on("click", ".title", function () {
+  // Click event so user can reload their favorite to the page
+    $(document).on("click", ".title", function () {
     var favCharName = $("#favCharName").text();
-    console.log(favCharName);
     heroSearch(favCharName);
     wikiSearch(favCharName);
-  });
+    });
 });
