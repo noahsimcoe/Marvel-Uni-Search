@@ -8,13 +8,10 @@ Marval Uni Search is an application that will take the user's super hero search 
 
 There is no installation required, all the user must do is go to the deployed application link below.
 
-https://noahsimcoe.github.io/Marvel-Uni-Search/
-
 ## Usage
 
 Marvel Uni Search will display all of the comics, events, series, and stories that that marvel character is in. On the right side of the application, Wikipedia displays more information about that hero. The user may also save any hero as their favorite, which will display their information on the favorites section while continuing to search for other heros.
 
-![screenshot of application]()
 
 ## Credits
 
