@@ -1,6 +1,5 @@
 $(function () {
   // variables
-  var headerSectionClass = document.querySelector(".header-section");
   var headerId = document.querySelector("#header");
   var columnsClass = document.querySelector(".columns");
   var columnIsOneQuarterClass = document.querySelectorAll(
