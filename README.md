@@ -37,3 +37,7 @@ Marvel - https://developer.marvel.com
 ## License
 
 No current Licenses
+
+## Screenshot
+
+![Screenshot](./assets/images/MUSScreenshot.jpg)
