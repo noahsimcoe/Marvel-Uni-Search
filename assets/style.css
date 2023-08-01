@@ -106,7 +106,7 @@ h3 {
 
 /* Add background image to the body */
 body {
-    background-image: url("/assets/images/IronMan.jpg");
+    background-image: url("./images/IronMan.jpg");
     background-repeat:no-repeat;
     background-position:center;
     background-size: 750px;
