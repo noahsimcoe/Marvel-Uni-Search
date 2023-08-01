@@ -38,6 +38,14 @@ Crypto-js - https://cdnjs.com/libraries/crypto-js
 
 No current Licenses
 
+## Disclaimer
+
+While the app fully supports most Marvel characters there are some that either the Marvel API contains no data or the Wiki page is dominated by a more real-world use of the character name. For example, characers that are named after Greek methology figures, such as Thor, the app may pull the wiki page for the mythological character vs. the Marvel character.
+
+While this list is not exhaustive, characters that are fully supported by the app include:
+
+Hulk, Iron Man, Captain America, Thanos, Silver Surfer, Nick Fury, Punisher, Gamora, Luke Cage, Human Torch, Deadpool, Mr. Fantastic, Professor X, Doctor Strange, Jean Grey, Emma Frost, Black Bolt, Invisible Woman, Namor, Kitty Pryde, Scarlet Witch, X-23, Hank Pym, Moon Knight, Wonder Man, Captain Britain, Strong Guy, Chang-Chi, Howard the Duck.
+
 ## Screenshot
 
 ![Screenshot](./assets/images/MUSScreenshot.jpg)
