@@ -29,14 +29,12 @@ h3 {
     -webkit-text-stroke-color: #ec1d24;
 }
 
-/* May or may not want to use fit-content! */
 #search-container {
     border:solid 1px;
     margin: 2.5rem;
     padding: 1.2rem;
     flex-wrap: wrap;
     display: flex;
-    /* width:fit-content; */
 }
 
 .searchbox {
@@ -110,9 +108,10 @@ body {
     background-repeat:no-repeat;
     background-position:center;
     background-size: 750px;
-    background-image:rgba(0, 0, 0, .1)
+    background-image:rgba(0, 0, 0, .1);
 }
 
+/* Hides elements on the page */
 .hide {
     visibility: hidden;
 }

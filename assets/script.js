@@ -28,8 +28,6 @@ $(function () {
     var favDesc = JSON.parse(localStorage.getItem("charDescription"));
     var favPic = JSON.parse(localStorage.getItem("charThumbnailUrl"));
     $("#favorites .profile-pic").attr("src", favPic);
-    // commenting out the original name, as we're now displaying it in the favorite's header
-    //$("#favorites .name").text(favName);
     $("#favorites .description").text(favDesc);
     $("#favorites .title").html(
       `<p>Favorite Character: <span id="favCharName">${favName}</span></p>`
@@ -55,6 +53,7 @@ $(function () {
     var publicKey = "c56260f4d749fa9644507d9cde6f2e8d";
     var privateKey = "2008ba7cd3708bda8540f651e6375ab1b50070b2";
     var hashPre = timeStamp + privateKey + publicKey;
+
     // creates an MD5 hash to be used as a parameter in the first api request
     var hash = CryptoJS.MD5(hashPre);
 
@@ -113,6 +112,7 @@ $(function () {
         $(".series #series").text(seriesList);
       });
   }
+  
   // Function for wiki summary area
   function wikiSearch(searchBoxId) {
     // Required parameter for the Wiki request
