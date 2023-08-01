@@ -44,7 +44,7 @@ While the app fully supports most Marvel characters there are some that either t
 
 While this list is not exhaustive, characters that are fully supported by the app include:
 
-Hulk, Iron Man, Captain America, Thanos, Silver Surfer, Nick Fury, Punisher, Gamora, Luke Cage, Human Torch, Deadpool, Mr. Fantastic, Professor X, Doctor Strange, Jean Grey, Emma Frost, Black Bolt, Invisible Woman, Namor, Kitty Pryde, Scarlet Witch, X-23, Hank Pym, Moon Knight, Wonder Man, Captain Britain, Strong Guy, Chang-Chi, Howard the Duck.
+Hulk, Iron Man, Captain America, Thanos, Silver Surfer, Nick Fury, Punisher, Gamora, Luke Cage, Human Torch, Deadpool, Mr. Fantastic, Professor X, Doctor Strange, Jean Grey, Emma Frost, Black Bolt, Invisible Woman, Namor, Kitty Pryde, Scarlet Witch, X-23, Hank Pym, Moon Knight, Wonder Man, Captain Britain, Strong Guy, Shang-Chi, Howard the Duck.
 
 ## Screenshot
 
