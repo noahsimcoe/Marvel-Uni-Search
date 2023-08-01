@@ -141,4 +141,17 @@ $(function () {
     heroSearch(favCharName);
     wikiSearch(favCharName);
     });
+
+  // disables search button if the input field is blank
+  searchBtnId.disabled = true;   // Make button disabled initially
+  searchBoxId.addEventListener('keyup', function(event){
+    let val = event.target.value;  // input's current value
+    if(val===''){
+        searchBtnId.disabled = true;  // Make button disabled
+    }
+    else {
+        searchBtnId.disabled = false;  // Make button enabled
+    }
+  });
+
 });
