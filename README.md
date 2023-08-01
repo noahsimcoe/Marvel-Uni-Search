@@ -25,11 +25,14 @@ Andrew Perkins - https://github.com/adrummer1
 
 Dale Talley III - https://github.com/daletalley
 
+
 List of Third-Party Assets
 
 Wikipedia - https://www.mediawiki.org/wiki/API:Main_page
 
 Marvel - https://developer.marvel.com
+
+Crypto-js - https://cdnjs.com/libraries/crypto-js
 
 ## License
 
